@@ -1,0 +1,312 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 09:23+0800\n"
+"PO-Revision-Date: 2026-05-12 19:00+0800\n"
+"Last-Translator: MomoFlora <2519840456@qq.com>\n"
+"Language-Team: Korean\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Base Setting"
+msgstr "기본 설정"
+
+msgid "Log"
+msgstr "로그"
+
+msgid "AdGuardHome's version"
+msgstr "AdGuardHome 버전"
+
+msgid "Needed to click 'save&apply' to generate the configuration file"
+msgstr "설정 파일 생성을 위해 '저장 및 적용'을 클릭해야 합니다"
+
+msgid "In case of the latest realease is a source code that can not download the binary file"
+msgstr "최신 릴리스가 소스 코드만 제공되어 바이너리를 다운로드할 수 없는 경우"
+
+msgid "Manual Config"
+msgstr "수동 설정"
+
+msgid "Free and open source, powerful network-wide ads & trackers blocking DNS server."
+msgstr "네트워크 전체 광고 및 트래커를 차단하는 오픈소스 DNS 서버입니다. 기본 계정과 비밀번호는 admin 입니다"
+
+msgid "RUNNING"
+msgstr "실행 중"
+
+msgid "NOT RUNNING"
+msgstr "중지됨"
+
+msgid "Redirected"
+msgstr "리디렉션됨"
+
+msgid "Not redirect"
+msgstr "리디렉션 안됨"
+
+msgid "Collecting data..."
+msgstr "데이터 수집 중..."
+
+msgid "Enable"
+msgstr "활성화"
+
+msgid "Browser management port"
+msgstr "웹 관리 포트"
+
+msgid "Upgrade Core"
+msgstr "코어 업데이트"
+
+msgid "Update core version"
+msgstr "코어 버전 업데이트"
+
+msgid "Check..."
+msgstr "확인 중..."
+
+msgid "Updated"
+msgstr "업데이트됨"
+
+msgid "Force update"
+msgstr "강제 업데이트"
+
+msgid "Fast config"
+msgstr "빠른 설정"
+
+msgid "Core Version"
+msgstr "코어 버전"
+
+msgid "Latest Version"
+msgstr "최신 버전"
+
+msgid "Beta Version"
+msgstr "베타 버전"
+
+msgid "Current core version:"
+msgstr "현재 코어 버전:"
+
+msgid "core version:"
+msgstr "코어 버전:"
+
+msgid "no config"
+msgstr "설정 없음"
+
+msgid "no core"
+msgstr "코어 없음"
+
+msgid "Redirect"
+msgstr "리디렉션"
+
+msgid "none"
+msgstr "없음"
+
+msgid "Run as dnsmasq upstream server"
+msgstr "dnsmasq 업스트림으로 사용"
+
+msgid "Redirect 53 port to AdGuardHome"
+msgstr "53 포트를 AdGuardHome으로 리디렉션"
+
+msgid "Use port 53 replace dnsmasq"
+msgstr "dnsmasq 대신 53 포트 사용"
+
+msgid "AdGuardHome redirect mode"
+msgstr "AdGuardHome 리디렉션 모드"
+
+msgid "Bin Path"
+msgstr "실행 파일 경로"
+
+msgid "AdGuardHome Bin path if no bin will auto download"
+msgstr "실행 파일이 없으면 자동 다운로드"
+
+msgid "use upx to compress bin after download"
+msgstr "다운로드 후 UPX로 압축"
+
+msgid "compress faster"
+msgstr "빠른 압축"
+
+msgid "compress better"
+msgstr "더 나은 압축"
+
+msgid "compress best(can be slow for big files)"
+msgstr "최고 압축(대용량은 느릴 수 있음)"
+
+msgid "try all available compression methods & filters [slow]"
+msgstr "모든 압축 방식 시도(느림)"
+
+msgid "try even more compression variants [very slow]"
+msgstr "추가 압축 방식 시도(매우 느림)"
+
+msgid "bin use less space,but may have compatibility issues"
+msgstr "용량 감소하지만 호환성 문제 가능"
+
+msgid "Config Path"
+msgstr "설정 파일 경로"
+
+msgid "AdGuardHome config path"
+msgstr "AdGuardHome 설정 경로"
+
+msgid "Work dir"
+msgstr "작업 디렉토리"
+
+msgid "AdGuardHome work dir include rules,audit log and database"
+msgstr "규칙/로그/DB 포함 작업 디렉토리"
+
+msgid "Runtime log file"
+msgstr "실행 로그 경로"
+
+msgid "AdGuardHome runtime Log file if 'syslog': write to system log;if empty no log"
+msgstr "syslog 사용 시 시스템 로그 출력, 비우면 로그 없음"
+
+msgid "Verbose log"
+msgstr "상세 로그"
+
+msgid "Add gfwlist"
+msgstr "GFW 리스트 추가"
+
+msgid "Add"
+msgstr "추가"
+
+msgid "Added"
+msgstr "추가됨"
+
+msgid "Not added"
+msgstr "미추가"
+
+msgid "Del gfwlist"
+msgstr "GFW 리스트 삭제"
+
+msgid "Del"
+msgstr "삭제"
+
+msgid "Gfwlist upstream dns server"
+msgstr "GFW 리스트 업스트림 DNS"
+
+msgid "Gfwlist domain upstream dns service"
+msgstr "GFW 도메인 업스트림 DNS"
+
+msgid "Change management password"
+msgstr "관리 비밀번호 변경"
+
+msgid "Culculate"
+msgstr "계산"
+
+msgid "Load culculate model"
+msgstr "계산 모듈 로드"
+
+msgid "loading..."
+msgstr "로딩 중..."
+
+msgid "Please save/apply"
+msgstr "저장/적용하세요"
+
+msgid "is empty"
+msgstr "비어 있음"
+
+msgid "Press load culculate model and culculate finally save/apply"
+msgstr "모듈 로드 → 계산 → 저장/적용"
+
+msgid "Keep files when system upgrade"
+msgstr "시스템 업그레이드 시 파일 유지"
+
+msgid "core bin"
+msgstr "코어 바이너리"
+
+msgid "config file"
+msgstr "설정 파일"
+
+msgid "log file"
+msgstr "로그 파일"
+
+msgid "querylog.json"
+msgstr "쿼리 로그.json"
+
+msgid "On boot when network ok restart"
+msgstr "네트워크 정상 시 부팅 재시작"
+
+msgid "Backup workdir files when shutdown"
+msgstr "종료 시 작업 디렉토리 백업"
+
+msgid "Will be restore when workdir/data is empty"
+msgstr "data가 비어있으면 복원"
+
+msgid "Backup workdir path"
+msgstr "백업 경로"
+
+msgid "Crontab task"
+msgstr "예약 작업"
+
+msgid "Auto update core"
+msgstr "코어 자동 업데이트"
+
+msgid "Auto tail querylog"
+msgstr "쿼리 로그 자동 정리"
+
+msgid "Auto tail runtime log"
+msgstr "실행 로그 자동 정리"
+
+msgid "Auto update ipv6 hosts and restart AdGuardHome"
+msgstr "IPv6 hosts 업데이트 및 재시작"
+
+msgid "Auto update gfwlist and restart AdGuardHome"
+msgstr "GFW 리스트 업데이트 및 재시작"
+
+msgid "Auto update ipset list and restart AdGuardHome"
+msgstr "ipset 업데이트 및 재시작"
+
+msgid "Please change time and args in crontab"
+msgstr "crontab에서 시간 및 인자 수정"
+
+msgid "Core Update URL"
+msgstr "코어 업데이트 URL"
+
+msgid "reverse"
+msgstr "역순"
+
+msgid "localtime"
+msgstr "로컬 시간"
+
+msgid "Please add log path in config to enable log"
+msgstr "로그 경로를 설정해야 로그 활성화됨"
+
+msgid "dellog"
+msgstr "로그 삭제"
+
+msgid "download log"
+msgstr "로그 다운로드"
+
+msgid "Use template"
+msgstr "템플릿 사용"
+
+msgid "Reload Config"
+msgstr "설정 다시 불러오기"
+
+msgid "WARNING!!! no bin found apply config will not be test"
+msgstr "경고: 실행 파일 없음, 검증 없이 적용됨"
+
+msgid "Change browser management username"
+msgstr "웹 관리 사용자 이름 변경"
+
+msgid "Username"
+msgstr "사용자 이름"
+
+msgid "Check Config"
+msgstr "설정 확인"
+
+msgid "unknown"
+msgstr "알 수 없음"
+
+msgid "Keep database when system upgrade"
+msgstr "업그레이드 시 DB 유지"
+
+msgid "Start up only when the network is normal"
+msgstr "네트워크 정상 시에만 시작"
+
+msgid "Main Config"
+msgstr "주 설정"
+
+msgid "Other Config"
+msgstr "기타 설정"
+
+msgid "Core Config"
+msgstr "코어 설정"
+
+msgid "will set to name gfwlist"
+msgstr "gfwlist 이름으로 설정됨"

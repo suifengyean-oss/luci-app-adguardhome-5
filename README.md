@@ -21,7 +21,7 @@ OpenWrt LuCI plugin for AdGuardHome. A free and open-source, powerful network-wi
 Add the following line to the **top** of `feeds.conf.default` in your OpenWrt SDK or source root directory:
 
 ```
-src-git adguardhome https://github.com/sirpdboy/luci-app-adguardhome.git;main
+src-git adguardhome https://github.com/MomoFlora/luci-app-adguardhome.git;main
 ```
 
 Then execute:
@@ -37,7 +37,7 @@ Navigate to `LuCI` -> `Applications` -> `luci-app-adguardhome`, save and build.
 ### Method 2: Clone directly to package directory
 
 ```bash
-git clone https://github.com/sirpdboy/luci-app-adguardhome.git package/luci-app-adguardhome
+git clone https://github.com/MomoFlora/luci-app-adguardhome.git package/luci-app-adguardhome
 make menuconfig
 ```
 
@@ -107,9 +107,9 @@ Apache License, Version 2.0
 
 ## Acknowledgments
 
-This project is a JavaScript-based modification of [sirpdboy/luci-app-adguardhome](https://github.com/sirpdboy/luci-app-adguardhome). Special thanks to the original author for their excellent work.
+This project is a JavaScript-based modification of [sirpdboy/luci-app-adguardhome](https://github.com/MomoFlora/luci-app-adguardhome). Special thanks to the original author for their excellent work.
 
 ## Links
 
 - [AdGuardHome Official Repository](https://github.com/AdguardTeam/AdGuardHome)
-- [Original Project](https://github.com/sirpdboy/luci-app-adguardhome)
+- [Original Project](https://github.com/MomoFlora/luci-app-adguardhome)

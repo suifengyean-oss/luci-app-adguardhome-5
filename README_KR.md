@@ -21,7 +21,7 @@ AdGuardHome 용 OpenWrt LuCI 플러그인. 무료이며 오픈소스인, 네트�
 OpenWrt SDK 또는 소스 루트 디렉토리의 `feeds.conf.default` **맨 위**에 다음을 추가:
 
 ```
-src-git adguardhome https://github.com/sirpdboy/luci-app-adguardhome.git;main
+src-git adguardhome https://github.com/MomoFlora/luci-app-adguardhome.git;main
 ```
 
 그 후 다음을 실행:
@@ -37,7 +37,7 @@ make menuconfig
 ### 방법 2: package 디렉토리에 직접 클론
 
 ```bash
-git clone https://github.com/sirpdboy/luci-app-adguardhome.git package/luci-app-adguardhome
+git clone https://github.com/MomoFlora/luci-app-adguardhome.git package/luci-app-adguardhome
 make menuconfig
 ```
 
@@ -107,9 +107,9 @@ Apache License, Version 2.0
 
 ## 감사의 말
 
-본 프로젝트는 [sirpdboy/luci-app-adguardhome](https://github.com/sirpdboy/luci-app-adguardhome)의 JavaScript 기반 수정 버전입니다. 원저자의 훌륭한 작업에 감사드립니다.
+본 프로젝트는 [sirpdboy/luci-app-adguardhome](https://github.com/MomoFlora/luci-app-adguardhome)의 JavaScript 기반 수정 버전입니다. 원저자의 훌륭한 작업에 감사드립니다.
 
 ## 링크
 
 - [AdGuardHome 공식 저장소](https://github.com/AdguardTeam/AdGuardHome)
-- [원본 프로젝트](https://github.com/sirpdboy/luci-app-adguardhome)
+- [원본 프로젝트](https://github.com/MomoFlora/luci-app-adguardhome)

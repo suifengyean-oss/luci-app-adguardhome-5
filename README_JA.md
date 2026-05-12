@@ -21,7 +21,7 @@ OpenWrt LuCI 向け AdGuardHome プラグイン。無料かつオープンソー
 OpenWrt SDK またはソースルートディレクトリの `feeds.conf.default` の**先頭**に以下を追加：
 
 ```
-src-git adguardhome https://github.com/sirpdboy/luci-app-adguardhome.git;main
+src-git adguardhome https://github.com/MomoFlora/luci-app-adguardhome.git;main
 ```
 
 その後、以下を実行：
@@ -37,7 +37,7 @@ make menuconfig
 ### 方法 2: package ディレクトリに直接クローン
 
 ```bash
-git clone https://github.com/sirpdboy/luci-app-adguardhome.git package/luci-app-adguardhome
+git clone https://github.com/MomoFlora/luci-app-adguardhome.git package/luci-app-adguardhome
 make menuconfig
 ```
 
@@ -107,9 +107,9 @@ Apache License, Version 2.0
 
 ## 謝辞
 
-本プロジェクトは [sirpdboy/luci-app-adguardhome](https://github.com/sirpdboy/luci-app-adguardhome) の JavaScript ベースの修正版です。原作者の優れた貢献に感謝します。
+本プロジェクトは [sirpdboy/luci-app-adguardhome](https://github.com/MomoFlora/luci-app-adguardhome) の JavaScript ベースの修正版です。原作者の優れた貢献に感謝します。
 
 ## リンク
 
 - [AdGuardHome 公式リポジトリ](https://github.com/AdguardTeam/AdGuardHome)
-- [元プロジェクト](https://github.com/sirpdboy/luci-app-adguardhome)
+- [元プロジェクト](https://github.com/MomoFlora/luci-app-adguardhome)

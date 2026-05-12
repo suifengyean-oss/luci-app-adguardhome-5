@@ -21,7 +21,7 @@ AdGuardHome 的 OpenWrt LuCI 插件。免费且开源，功能强大的全网广
 在 OpenWrt SDK 或源码根目录的 `feeds.conf.default` **顶部**添加如下内容：
 
 ```
-src-git adguardhome https://github.com/sirpdboy/luci-app-adguardhome.git;main
+src-git adguardhome https://github.com/MomoFlora/luci-app-adguardhome.git;main
 ```
 
 然后执行：
@@ -37,7 +37,7 @@ make menuconfig
 ### 方法 2：直接克隆到 package 目录
 
 ```bash
-git clone https://github.com/sirpdboy/luci-app-adguardhome.git package/luci-app-adguardhome
+git clone https://github.com/MomoFlora/luci-app-adguardhome.git package/luci-app-adguardhome
 make menuconfig
 ```
 
@@ -107,9 +107,9 @@ Apache License, Version 2.0
 
 ## 致谢
 
-本项目是基于 [sirpdboy/luci-app-adguardhome](https://github.com/sirpdboy/luci-app-adguardhome) 的 JavaScript 修改版本，特别感谢原作者的优秀工作。
+本项目是基于 [sirpdboy/luci-app-adguardhome](https://github.com/MomoFlora/luci-app-adguardhome) 的 JavaScript 修改版本，特别感谢原作者的优秀工作。
 
 ## 相关链接
 
 - [AdGuardHome 官方仓库](https://github.com/AdguardTeam/AdGuardHome)
-- [原始项目地址](https://github.com/sirpdboy/luci-app-adguardhome)
+- [原始项目地址](https://github.com/MomoFlora/luci-app-adguardhome)

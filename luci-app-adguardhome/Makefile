@@ -4,12 +4,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-adguardhome
-PKG_VERSION:=1.1.1
-PKG_MAINTAINER:=<https://github.com/MomoFlora/luci-app-adguardhome>
+PKG_VERSION:=1.1.2
+PKG_MAINTAINER:=MomoFlora <2519840456@qq.com>
 
 LUCI_TITLE:=LuCI app for AdGuardHome
 LUCI_PKGARCH:=all
-LUCI_DEPENDS:=+ca-certs +!wget&&!curl&&!wget-ssl:curl
+LUCI_DEPENDS:=+ca-certs +wget
 LUCI_DESCRIPTION:=LuCI support for AdGuardHome
 
 
@@ -19,7 +19,6 @@ define Package/$(PKG_NAME)/conffiles
 endef
 
 define Package/$(PKG_NAME)/preinst
-#!/bin/sh
 	uci -q batch <<-EOF >/dev/null 2>&1
 		delete ucitrack.@AdGuardHome[-1]
 		add ucitrack AdGuardHome
@@ -31,8 +30,6 @@ exit 0
 endef
 
 define Package/$(PKG_NAME)/postinst
-
-#!/bin/sh
 	chmod +x /usr/share/AdGuardHome/*
 	chmod +x /etc/init.d/AdGuardHome
 	/etc/init.d/AdGuardHome enable >/dev/null 2>&1
@@ -46,7 +43,6 @@ exit 0
 endef
 
 define Package/$(PKG_NAME)/prerm
-#!/bin/sh
 if [ -z "$${IPKG_INSTROOT}" ]; then
      /etc/init.d/AdGuardHome disable
      /etc/init.d/AdGuardHome stop
@@ -59,7 +55,6 @@ exit 0
 endef
 
 define Package/$(PKG_NAME)/postrm
-#!/bin/sh
 rm -rf /etc/AdGuardHome/
 exit 0
 endef

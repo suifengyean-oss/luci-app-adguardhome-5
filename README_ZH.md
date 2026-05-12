@@ -1,6 +1,6 @@
-# luci-app-adguardhome
+[English](README.md) | [简体中文](README_ZH.md) | [日本語](README_JA.md) | [한국어](README_KR.md)
 
-[English](README.md)
+# luci-app-adguardhome
 
 AdGuardHome 的 OpenWrt LuCI 插件。免费且开源，功能强大的全网广告和跟踪程序拦截 DNS 服务器。
 

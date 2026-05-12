@@ -1,23 +1,40 @@
 {
 	"luci-app-adguardhome": {
-		"description": "Grant UCI access for luci-app-adguardhome",
+		"description": "Grant access for luci-app-adguardhome",
 		"read": {
-		"file": {
-			"/usr/share/AdGuardHome/addhost.sh": [ "exec" ],
-			"/usr/share/AdGuardHome/AdGuardHome_template.yaml": [ "read" ],
-			"/usr/share/AdGuardHome/getsyslog.sh": [ "exec" ],
-			"/usr/share/AdGuardHome/gfw2adg.sh": [ "exec" ],
-			"/usr/share/AdGuardHome/gfwipset2adg.sh": [ "exec" ],
-			"/usr/share/AdGuardHome/update_core.sh": [ "exec" ],
-			"/usr/share/AdGuardHome/waitnet.sh": [ "exec" ],
-			"/usr/share/AdGuardHome/watchconfig.sh": [ "exec" ],
-			"/etc/init.d/AdGuardHome": [ "exec" ],
-			"/etc/init.d/dnsmasq": [ "exec" ],
-			"/usr/bin/AdGuardHome/AdGuardHome": [ "exec" ]
+			"file": {
+				"/bin/sh": [ "exec" ],
+				"/etc/AdGuardHome.yaml": [ "read", "write" ],
+				"/etc/AdGuardHome/*": [ "read", "write", "list" ],
+				"/etc/init.d/AdGuardHome": [ "exec" ],
+				"/etc/init.d/dnsmasq": [ "exec" ],
+				"/tmp/AdGuardHome*": [ "read", "write", "remove" ],
+				"/tmp/resolv.conf.auto": [ "read" ],
+				"/tmp/resolv.conf.d/resolv.conf.auto": [ "read" ],
+				"/usr/bin/AdGuardHome": [ "exec", "read", "write" ],
+				"/usr/share/AdGuardHome/addhost.sh": [ "exec" ],
+				"/usr/share/AdGuardHome/AdGuardHome_template.yaml": [ "read" ],
+				"/usr/share/AdGuardHome/getsyslog.sh": [ "exec" ],
+				"/usr/share/AdGuardHome/gfw2adg.sh": [ "exec" ],
+				"/usr/share/AdGuardHome/gfwipset2adg.sh": [ "exec" ],
+				"/usr/share/AdGuardHome/update_core.sh": [ "exec" ],
+				"/usr/share/AdGuardHome/waitnet.sh": [ "exec" ],
+				"/usr/share/AdGuardHome/watchconfig.sh": [ "exec" ],
+				"/var/run/AdG*": [ "read", "write", "remove" ],
+				"/var/run/lucilogpos": [ "read", "write" ],
+				"/var/run/update_core": [ "read" ],
+				"/var/run/update_core_error": [ "read" ]
 			},
 			"uci": [ "AdGuardHome" ]
 		},
 		"write": {
+			"file": {
+				"/etc/AdGuardHome.yaml": [ "read", "write" ],
+				"/etc/AdGuardHome/*": [ "read", "write", "list" ],
+				"/tmp/AdGuardHome*": [ "read", "write", "remove" ],
+				"/var/run/AdG*": [ "read", "write", "remove" ],
+				"/var/run/lucilogpos": [ "read", "write" ]
+			},
 			"uci": [ "AdGuardHome" ]
 		}
 	}

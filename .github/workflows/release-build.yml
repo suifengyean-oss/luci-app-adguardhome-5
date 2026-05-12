@@ -89,7 +89,7 @@ jobs:
           echo "src-git-full luci https://github.com/openwrt/luci.git;master" >> feeds.conf
           echo "src-git-full routing https://git.openwrt.org/feed/routing.git;master"  >> feeds.conf
 
-          git clone -b openwrt-25.12 https://github.com/${{ github.repository }}.git package/luci-theme-argon
+          git clone -b openwrt-25.12 https://github.com/${{ github.repository }}.git package/luci-app-adguardhome
 
       - name: Build IPK
         if: matrix.type == 'ipk'

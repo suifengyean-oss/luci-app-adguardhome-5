@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-adguardhome
 PKG_VERSION:=1.1.1
-PKG_MAINTAINER:=<https://github.com/sirpdboy/luci-app-adguardhome>
+PKG_MAINTAINER:=<https://github.com/MomoFlora/luci-app-adguardhome>
 
 LUCI_TITLE:=LuCI app for AdGuardHome
 LUCI_PKGARCH:=all

@@ -2,6 +2,8 @@
 
 # luci-app-adguardhome
 
+![AdGuardHome](./docs/adguardhome.png)
+
 OpenWrt LuCI 向け AdGuardHome プラグイン。無料かつオープンソースで、ネットワーク全体の広告およびトラッカーをブロックする強力な DNS サーバー。
 
 ## 機能

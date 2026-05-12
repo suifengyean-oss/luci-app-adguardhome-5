@@ -1,0 +1,302 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+msgid "Base Setting"
+msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "AdGuardHome's version"
+msgstr ""
+
+msgid "Needed to click 'save&apply' to generate the configuration file"
+msgstr ""
+
+msgid "In case of the latest realease is a source code that can not download the binary file"
+msgstr ""
+
+msgid "Manual Config"
+msgstr ""
+
+msgid "Free and open source, powerful network-wide ads & trackers blocking DNS server."
+msgstr ""
+
+msgid "RUNNING"
+msgstr ""
+
+msgid "NOT RUNNING"
+msgstr ""
+
+msgid "Redirected"
+msgstr ""
+
+msgid "Not redirect"
+msgstr ""
+
+msgid "Collecting data..."
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Browser management port"
+msgstr ""
+
+msgid "Upgrade Core"
+msgstr ""
+
+msgid "Update core version"
+msgstr ""
+
+msgid "Check..."
+msgstr ""
+
+msgid "Updated"
+msgstr ""
+
+msgid "Force update"
+msgstr ""
+
+msgid "Fast config"
+msgstr ""
+
+msgid "Core Version"
+msgstr ""
+
+msgid "Latest Version"
+msgstr ""
+
+msgid "Beta Version"
+msgstr ""
+
+msgid "Current core version:"
+msgstr ""
+
+msgid "core version:"
+msgstr ""
+
+msgid "no config"
+msgstr ""
+
+msgid "no core"
+msgstr ""
+
+msgid "Redirect"
+msgstr ""
+
+msgid "none"
+msgstr ""
+
+msgid "Run as dnsmasq upstream server"
+msgstr ""
+
+msgid "Redirect 53 port to AdGuardHome"
+msgstr ""
+
+msgid "Use port 53 replace dnsmasq"
+msgstr ""
+
+msgid "AdGuardHome redirect mode"
+msgstr ""
+
+msgid "Bin Path"
+msgstr ""
+
+msgid "AdGuardHome Bin path if no bin will auto download"
+msgstr ""
+
+msgid "use upx to compress bin after download"
+msgstr ""
+
+msgid "compress faster"
+msgstr ""
+
+msgid "compress better"
+msgstr ""
+
+msgid "compress best(can be slow for big files)"
+msgstr ""
+
+msgid "try all available compression methods & filters [slow]"
+msgstr ""
+
+msgid "try even more compression variants [very slow]"
+msgstr ""
+
+msgid "bin use less space,but may have compatibility issues"
+msgstr ""
+
+msgid "Config Path"
+msgstr ""
+
+msgid "AdGuardHome config path"
+msgstr ""
+
+msgid "Work dir"
+msgstr ""
+
+msgid "AdGuardHome work dir include rules,audit log and database"
+msgstr ""
+
+msgid "Runtime log file"
+msgstr ""
+
+msgid "AdGuardHome runtime Log file if 'syslog': write to system log;if empty no log"
+msgstr ""
+
+msgid "Verbose log"
+msgstr ""
+
+msgid "Add gfwlist"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Added"
+msgstr ""
+
+msgid "Not added"
+msgstr ""
+
+msgid "Del gfwlist"
+msgstr ""
+
+msgid "Del"
+msgstr ""
+
+msgid "Gfwlist upstream dns server"
+msgstr ""
+
+msgid "Gfwlist domain upstream dns service"
+msgstr ""
+
+msgid "Change management password"
+msgstr ""
+
+msgid "Culculate"
+msgstr ""
+
+msgid "Load culculate model"
+msgstr ""
+
+msgid "loading..."
+msgstr ""
+
+msgid "Please save/apply"
+msgstr ""
+
+msgid "is empty"
+msgstr ""
+
+msgid "Press load culculate model and culculate finally save/apply"
+msgstr ""
+
+msgid "Keep files when system upgrade"
+msgstr ""
+
+msgid "core bin"
+msgstr ""
+
+msgid "config file"
+msgstr ""
+
+msgid "log file"
+msgstr ""
+
+msgid "querylog.json"
+msgstr ""
+
+msgid "On boot when network ok restart"
+msgstr ""
+
+msgid "Backup workdir files when shutdown"
+msgstr ""
+
+msgid "Will be restore when workdir/data is empty"
+msgstr ""
+
+msgid "Backup workdir path"
+msgstr ""
+
+msgid "Crontab task"
+msgstr ""
+
+msgid "Auto update core"
+msgstr ""
+
+msgid "Auto tail querylog"
+msgstr ""
+
+msgid "Auto tail runtime log"
+msgstr ""
+
+msgid "Auto update ipv6 hosts and restart AdGuardHome"
+msgstr ""
+
+msgid "Auto update gfwlist and restart AdGuardHome"
+msgstr ""
+
+msgid "Auto update ipset list and restart AdGuardHome"
+msgstr ""
+
+msgid "Please change time and args in crontab"
+msgstr ""
+
+msgid "Core Update URL"
+msgstr ""
+
+msgid "reverse"
+msgstr ""
+
+msgid "localtime"
+msgstr ""
+
+msgid "Please add log path in config to enable log"
+msgstr ""
+
+msgid "dellog"
+msgstr ""
+
+msgid "download log"
+msgstr ""
+
+msgid "Use template"
+msgstr ""
+
+msgid "Reload Config"
+msgstr ""
+
+msgid "WARNING!!! no bin found apply config will not be test"
+msgstr ""
+
+msgid "Change browser management username"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Check Config"
+msgstr ""
+
+msgid "unknown"
+msgstr ""
+
+msgid "Keep database when system upgrade"
+msgstr ""
+
+msgid "Start up only when the network is normal"
+msgstr ""
+
+msgid "Main Config"
+msgstr ""
+
+msgid "Other Config"
+msgstr ""
+
+msgid "Core Config"
+msgstr ""
+
+msgid "will set to name gfwlist"
+msgstr ""

@@ -1,155 +1,96 @@
-name: "Auto compile Argon (IPK + APK)"
+name: Build Packages
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
-
-env:
-  TZ: Asia/Shanghai
+  push:
+    tags:
+      - "*"
 
 jobs:
-  check_version:
-    name: Check Version
-    runs-on: ubuntu-24.04
-    outputs:
-      argon_version: ${{ steps.check.outputs.latest_version }}
-      has_update: ${{ steps.check.outputs.has_update }}
-      
-    steps:
-      - name: Checkout
-        uses: actions/checkout@main
-        with:
-          fetch-depth: 0
-          ref: openwrt-25.12
-
-      - name: Check version
-        id: check
-        run: |
-          latest_version=$(grep -oP 'PKG_VERSION:=\K.*' Makefile | sed 's/^/v/')
-          latest_release=$(wget -qO- https://api.github.com/repos/${{ github.repository }}/releases/latest | awk -F '"' '/tag_name/{print $4}')
-
-          has_update=$([ "$latest_version" != "$latest_release" ] && echo true || echo false)
-
-          echo "latest_version=$latest_version" >> $GITHUB_OUTPUT
-          echo "has_update=$has_update" >> $GITHUB_OUTPUT
-
-          echo "latest_version: $latest_version"
-          echo "latest_release: $latest_release"
-          echo "has_update: $has_update"
-
-  build_argon:
-    name: Build Argon ${{ matrix.tag }} (${{ matrix.type }})
-    needs: check_version
-    if: needs.check_version.outputs.has_update == 'true'
+  build:
+    name: Build ${{ matrix.arch }}-${{ matrix.tag }}
     runs-on: ubuntu-latest
-
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - tag: 24.10.6
-            type: ipk
-            sdk_dir: sdk-ipk-24.10.6
-
-          - tag: 25.12.1
-            type: apk
-            sdk_dir: sdk-apk-25.12.1
+        arch:
+          - aarch64_cortex-a53
+          - aarch64_cortex-a72
+          - aarch64_cortex-a76
+          - aarch64_generic
+          - arm_arm1176jzf-s_vfp
+          - arm_arm926ej-s
+          - arm_cortex-a15_neon-vfpv4
+          - arm_cortex-a5_vfpv4
+          - arm_cortex-a7
+          - arm_cortex-a7_neon-vfpv4
+          - arm_cortex-a7_vfpv4
+          - arm_cortex-a8_vfpv3
+          - arm_cortex-a9
+          - arm_cortex-a9_neon
+          - arm_cortex-a9_vfpv3-d16
+          - arm_fa526
+          - arm_xscale
+          - i386_pentium-mmx
+          - i386_pentium4
+          - loongarch64_generic
+          - mips64_mips64r2
+          - mips64_octeonplus
+          - mips64el_mips64r2
+          - mips_24kc
+          - mips_4kec
+          - mips_mips32
+          - mipsel_24kc
+          - mipsel_24kc_24kf
+          - mipsel_74kc
+          - mipsel_mips32
+          - riscv64_riscv64
+          - x86_64
+        tag:
+          - openwrt-24.10
+          - openwrt-25.12
 
     steps:
-      - name: Install dependencies
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Build preparation
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y \
-            zstd build-essential clang flex bison g++ gawk git wget file unzip
-
-      - name: Setup SDK
-        run: |
-          mkdir -p ${{ matrix.sdk_dir }}
-          cd ${{ matrix.sdk_dir }}
-
-          if [ "${{ matrix.type }}" = "ipk" ]; then
-            echo ">>> IPK MODE"
-
-            wget https://archive.openwrt.org/releases/24.10.6/targets/x86/64/openwrt-sdk-24.10.6-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-            tar --zstd -xvf *.tar.zst --strip-components=1
-
+          sed -i '/golang-package/a \\tGO_PKG_DEFAULT_LDFLAGS:=-w -s -extldflags "-static"' mosdns/Makefile
+          sed -i '/golang-package/a \\tGO_PKG_DEFAULT_LDFLAGS:=-w -s -extldflags "-static"' v2dat/Makefile
+          git clone https://github.com/sbwml/v2ray-geodata
+          echo "SKIP_BUILD=0" >> $GITHUB_ENV
+          if [ "${{ matrix.tag }}" = "openwrt-25.12" ] && [ "${{ matrix.arch }}" = "riscv64_riscv64" ]; then
+            echo "EFFECTIVE_ARCH=riscv64_generic" >> $GITHUB_ENV
+            echo "ARCH=riscv64_generic-${{ matrix.tag }}" >> $GITHUB_ENV
+          elif [ "${{ matrix.tag }}" = "openwrt-25.12" ] && [ "${{ matrix.arch }}" = "mips_4kec" ]; then
+            echo "SKIP_BUILD=1" >> $GITHUB_ENV
           else
-            echo ">>> APK MODE"
-
-            wget https://archive.openwrt.org/releases/25.12.1/targets/x86/64/openwrt-sdk-25.12.1-x86-64_gcc-14.3.0_musl.Linux-x86_64.tar.zst
-            tar --zstd -xvf *.tar.zst --strip-components=1
+            echo "EFFECTIVE_ARCH=${{ matrix.arch }}" >> $GITHUB_ENV
+            echo "ARCH=${{ matrix.arch }}-${{ matrix.tag }}" >> $GITHUB_ENV
           fi
 
-      - name: Clone package
-        run: |
-          cd ${{ matrix.sdk_dir }}
-
-          echo "src-git base https://github.com/openwrt/openwrt.git;main" > feeds.conf
-          echo "src-git-full packages https://github.com/openwrt/packages.git;master" >> feeds.conf
-          echo "src-git-full luci https://github.com/openwrt/luci.git;master" >> feeds.conf
-          echo "src-git-full routing https://git.openwrt.org/feed/routing.git;master"  >> feeds.conf
-
-          git clone -b openwrt-25.12 https://github.com/${{ github.repository }}.git package/luci-app-adguardhome
-
-      - name: Build IPK
-        if: matrix.type == 'ipk'
-        run: |
-          cd ${{ matrix.sdk_dir }}
-
-          ./scripts/feeds update -a
-          ./scripts/feeds install luci-app-adguardhome luci-base
-
-          echo "CONFIG_PACKAGE_luci-app-adguardhome=m" > .config
-          echo "CONFIG_PACKAGE_luci-base=m" >> .config
-
-          make defconfig
-
-          make package/luci-app-adguardhome/compile -j$(nproc)
-
-          mkdir -p ../output/ipk/${{ matrix.tag }}
-          cp bin/packages/x86_64/base/*.ipk ../output/ipk/${{ matrix.tag }}/
-
-      - name: Build APK
-        if: matrix.type == 'apk'
-        run: |
-          cd ${{ matrix.sdk_dir }}
-
-          ./scripts/feeds update -a
-          ./scripts/feeds install luci-app-adguardhome luci-base
-
-          echo "CONFIG_PACKAGE_luci-app-adguardhome=m" > .config
-          echo "CONFIG_PACKAGE_luci-base=m" >> .config
-
-          make defconfig
-
-          make package/luci-app-adguardhome/compile -j$(nproc)
-
-          mkdir -p ../output/apk/${{ matrix.tag }}
-          cp bin/packages/x86_64/base/*.apk ../output/apk/${{ matrix.tag }}/
-
-      - name: Upload artifacts
-        uses: actions/upload-artifact@main
-        with:
-          name: argon-${{ matrix.tag }}-${{ matrix.type }}
-          path: output
-
-  release:
-    name: Create Release
-    needs: [check_version, build_argon]
-    if: needs.check_version.outputs.has_update == 'true'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download artifacts
-        uses: actions/download-artifact@main
-        with:
-          path: output
-
-      - name: Create Release
-        uses: softprops/action-gh-release@master
+      - name: Build Packages
+        if: ${{ env.SKIP_BUILD == '0' }}
+        uses: MomoFlora/openwrt-gh-action-sdk@go1.26
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FEEDNAME: packages_ci
+          PACKAGES: luci-app-adguardhome
+          NO_REFRESH_CHECK: true
+
+      - name: Create compress files
+        if: ${{ env.SKIP_BUILD == '0' }}
+        continue-on-error: true
+        run: |
+          tar -zcvf ${{ env.ARCH }}.tar.gz -C bin/packages/${{ env.EFFECTIVE_ARCH }}/ packages_ci
+
+      - name: Upload packages
+        if: ${{ env.SKIP_BUILD == '0' }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ needs.check_version.outputs.argon_version }}
-          name: "LuCI Argon Auto Build"
-          files: output/**/*
+          name: ${{ github.ref_name }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          allowUpdates: true
+          replacesArtifacts: true
+          prerelease: false
+          artifacts: "${{ env.ARCH }}.tar.gz"

@@ -1,0 +1,312 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 09:23+0800\n"
+"PO-Revision-Date: 2026-05-12 19:00+0800\n"
+"Last-Translator: MomoFlora <2519840456@qq.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Base Setting"
+msgstr "基本設定"
+
+msgid "Log"
+msgstr "ログ"
+
+msgid "AdGuardHome's version"
+msgstr "AdGuardHome バージョン"
+
+msgid "Needed to click 'save&apply' to generate the configuration file"
+msgstr "設定ファイルを生成するには「保存して適用」をクリックしてください"
+
+msgid "In case of the latest realease is a source code that can not download the binary file"
+msgstr "最新リリースがソースコードのみでバイナリが取得できない場合の対策"
+
+msgid "Manual Config"
+msgstr "手動設定"
+
+msgid "Free and open source, powerful network-wide ads & trackers blocking DNS server."
+msgstr "ネットワーク全体の広告・トラッカーをブロックするオープンソースDNSサーバー。デフォルトのユーザー名とパスワードは admin"
+
+msgid "RUNNING"
+msgstr "実行中"
+
+msgid "NOT RUNNING"
+msgstr "停止中"
+
+msgid "Redirected"
+msgstr "リダイレクト済み"
+
+msgid "Not redirect"
+msgstr "未リダイレクト"
+
+msgid "Collecting data..."
+msgstr "データ取得中..."
+
+msgid "Enable"
+msgstr "有効"
+
+msgid "Browser management port"
+msgstr "Web管理ポート"
+
+msgid "Upgrade Core"
+msgstr "コア更新"
+
+msgid "Update core version"
+msgstr "コアバージョン更新"
+
+msgid "Check..."
+msgstr "確認中..."
+
+msgid "Updated"
+msgstr "更新済み"
+
+msgid "Force update"
+msgstr "強制更新"
+
+msgid "Fast config"
+msgstr "簡易設定"
+
+msgid "Core Version"
+msgstr "コアバージョン"
+
+msgid "Latest Version"
+msgstr "最新バージョン"
+
+msgid "Beta Version"
+msgstr "ベータ版"
+
+msgid "Current core version:"
+msgstr "現在のコアバージョン："
+
+msgid "core version:"
+msgstr "コアバージョン："
+
+msgid "no config"
+msgstr "設定なし"
+
+msgid "no core"
+msgstr "コアなし"
+
+msgid "Redirect"
+msgstr "リダイレクト"
+
+msgid "none"
+msgstr "なし"
+
+msgid "Run as dnsmasq upstream server"
+msgstr "dnsmasqの上流DNSとして使用"
+
+msgid "Redirect 53 port to AdGuardHome"
+msgstr "53ポートをAdGuardHomeへリダイレクト"
+
+msgid "Use port 53 replace dnsmasq"
+msgstr "dnsmasqの代わりに53ポートを使用"
+
+msgid "AdGuardHome redirect mode"
+msgstr "AdGuardHomeリダイレクトモード"
+
+msgid "Bin Path"
+msgstr "実行ファイルパス"
+
+msgid "AdGuardHome Bin path if no bin will auto download"
+msgstr "AdGuardHome実行ファイルパス（存在しない場合は自動ダウンロード）"
+
+msgid "use upx to compress bin after download"
+msgstr "ダウンロード後にUPXで圧縮"
+
+msgid "compress faster"
+msgstr "高速圧縮"
+
+msgid "compress better"
+msgstr "高圧縮"
+
+msgid "compress best(can be slow for big files)"
+msgstr "最高圧縮（大容量は遅い可能性あり）"
+
+msgid "try all available compression methods & filters [slow]"
+msgstr "全圧縮方式を試行（遅い）"
+
+msgid "try even more compression variants [very slow]"
+msgstr "さらに圧縮方式を試行（非常に遅い）"
+
+msgid "bin use less space,but may have compatibility issues"
+msgstr "サイズ削減するが互換性問題の可能性あり"
+
+msgid "Config Path"
+msgstr "設定ファイルパス"
+
+msgid "AdGuardHome config path"
+msgstr "AdGuardHome設定ファイルパス"
+
+msgid "Work dir"
+msgstr "作業ディレクトリ"
+
+msgid "AdGuardHome work dir include rules,audit log and database"
+msgstr "ルール・監査ログ・データベースを含む作業ディレクトリ"
+
+msgid "Runtime log file"
+msgstr "実行ログパス"
+
+msgid "AdGuardHome runtime Log file if 'syslog': write to system log;if empty no log"
+msgstr "syslog指定でシステムログ出力、空欄でログ無効"
+
+msgid "Verbose log"
+msgstr "詳細ログ"
+
+msgid "Add gfwlist"
+msgstr "GFWリスト追加"
+
+msgid "Add"
+msgstr "追加"
+
+msgid "Added"
+msgstr "追加済み"
+
+msgid "Not added"
+msgstr "未追加"
+
+msgid "Del gfwlist"
+msgstr "GFWリスト削除"
+
+msgid "Del"
+msgstr "削除"
+
+msgid "Gfwlist upstream dns server"
+msgstr "GFWリスト上流DNS"
+
+msgid "Gfwlist domain upstream dns service"
+msgstr "GFWドメイン上流DNSサービス"
+
+msgid "Change management password"
+msgstr "管理パスワード変更"
+
+msgid "Culculate"
+msgstr "計算"
+
+msgid "Load culculate model"
+msgstr "計算モジュール読み込み"
+
+msgid "loading..."
+msgstr "読み込み中..."
+
+msgid "Please save/apply"
+msgstr "保存/適用してください"
+
+msgid "is empty"
+msgstr "空です"
+
+msgid "Press load culculate model and culculate finally save/apply"
+msgstr "モジュール読込→計算→保存/適用"
+
+msgid "Keep files when system upgrade"
+msgstr "システム更新時にファイル保持"
+
+msgid "core bin"
+msgstr "コアバイナリ"
+
+msgid "config file"
+msgstr "設定ファイル"
+
+msgid "log file"
+msgstr "ログファイル"
+
+msgid "querylog.json"
+msgstr "クエリログ.json"
+
+msgid "On boot when network ok restart"
+msgstr "ネットワーク正常時に再起動"
+
+msgid "Backup workdir files when shutdown"
+msgstr "シャットダウン時にバックアップ"
+
+msgid "Will be restore when workdir/data is empty"
+msgstr "dataが空の場合に復元"
+
+msgid "Backup workdir path"
+msgstr "バックアップパス"
+
+msgid "Crontab task"
+msgstr "スケジュールタスク"
+
+msgid "Auto update core"
+msgstr "コア自動更新"
+
+msgid "Auto tail querylog"
+msgstr "クエリログ自動整理"
+
+msgid "Auto tail runtime log"
+msgstr "実行ログ自動整理"
+
+msgid "Auto update ipv6 hosts and restart AdGuardHome"
+msgstr "IPv6 hosts更新＆再起動"
+
+msgid "Auto update gfwlist and restart AdGuardHome"
+msgstr "GFWリスト更新＆再起動"
+
+msgid "Auto update ipset list and restart AdGuardHome"
+msgstr "ipset更新＆再起動"
+
+msgid "Please change time and args in crontab"
+msgstr "crontabで時間と引数を変更"
+
+msgid "Core Update URL"
+msgstr "コア更新URL"
+
+msgid "reverse"
+msgstr "逆順"
+
+msgid "localtime"
+msgstr "ローカル時間"
+
+msgid "Please add log path in config to enable log"
+msgstr "ログパスを設定してください"
+
+msgid "dellog"
+msgstr "ログ削除"
+
+msgid "download log"
+msgstr "ログダウンロード"
+
+msgid "Use template"
+msgstr "テンプレート使用"
+
+msgid "Reload Config"
+msgstr "設定再読み込み"
+
+msgid "WARNING!!! no bin found apply config will not be test"
+msgstr "警告：バイナリ未検出のため検証なしで適用"
+
+msgid "Change browser management username"
+msgstr "管理ユーザー名変更"
+
+msgid "Username"
+msgstr "ユーザー名"
+
+msgid "Check Config"
+msgstr "設定確認"
+
+msgid "unknown"
+msgstr "不明"
+
+msgid "Keep database when system upgrade"
+msgstr "アップグレード時にDB保持"
+
+msgid "Start up only when the network is normal"
+msgstr "ネットワーク正常時のみ起動"
+
+msgid "Main Config"
+msgstr "メイン設定"
+
+msgid "Other Config"
+msgstr "その他設定"
+
+msgid "Core Config"
+msgstr "コア設定"
+
+msgid "will set to name gfwlist"
+msgstr "gfwlist名として設定されます"

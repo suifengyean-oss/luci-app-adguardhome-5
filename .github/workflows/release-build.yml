@@ -51,7 +51,7 @@ jobs:
           - x86_64
         tag:
           - openwrt-24.10
-          # - openwrt-25.12  # 如果报错可以先注释掉 25.12 测试
+          - openwrt-25.12
 
     steps:
       - uses: actions/checkout@v4

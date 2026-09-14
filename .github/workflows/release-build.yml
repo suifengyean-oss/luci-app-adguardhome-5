@@ -51,7 +51,7 @@ jobs:
           - x86_64
         tag:
           - openwrt-24.10
-          - openwrt-25.12
+          # - openwrt-25.12  # 如果报错可以先注释掉 25.12 测试
 
     steps:
       - uses: actions/checkout@v4
@@ -70,11 +70,15 @@ jobs:
             echo "EFFECTIVE_ARCH=${{ matrix.arch }}" >> $GITHUB_ENV
             echo "ARCH=${{ matrix.arch }}-${{ matrix.tag }}" >> $GITHUB_ENV
           fi
+          # 提取版本号给官方 Action 使用
+          echo "OPENWRT_VERSION=$(echo ${{ matrix.tag }} | sed 's/openwrt-//')" >> $GITHUB_ENV
 
       - name: Build Packages
         if: ${{ env.SKIP_BUILD == '0' }}
-        uses: MomoFlora/openwrt-gh-action-sdk@go1.26
+        uses: openwrt/gh-action-sdk@main
         env:
+          ARCH: ${{ env.EFFECTIVE_ARCH }}
+          VERSION: ${{ env.OPENWRT_VERSION }}
           FEEDNAME: packages_ci
           PACKAGES: luci-app-adguardhome
           NO_REFRESH_CHECK: true

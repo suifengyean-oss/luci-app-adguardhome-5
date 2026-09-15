@@ -5,6 +5,11 @@ on:
     tags:
       - "*"
   workflow_dispatch:
+    inputs:
+      tag:
+        description: '输入用于测试的 Tag (例如 v1.0.0)'
+        required: true
+        default: 'v1.0.0'
 
 permissions:
   contents: write
@@ -51,7 +56,6 @@ jobs:
           - x86_64
         tag:
           - openwrt-24.10
-          - openwrt-25.12
 
     steps:
       - uses: actions/checkout@v4
@@ -63,14 +67,16 @@ jobs:
           echo "SKIP_BUILD=0" >> $GITHUB_ENV
           if [ "${{ matrix.tag }}" = "openwrt-25.12" ] && [ "${{ matrix.arch }}" = "riscv64_riscv64" ]; then
             echo "EFFECTIVE_ARCH=riscv64_generic" >> $GITHUB_ENV
-            echo "ARCH=riscv64_generic-${{ matrix.tag }}" >> $GITHUB_ENV
           elif [ "${{ matrix.tag }}" = "openwrt-25.12" ] && [ "${{ matrix.arch }}" = "mips_4kec" ]; then
             echo "SKIP_BUILD=1" >> $GITHUB_ENV
           else
             echo "EFFECTIVE_ARCH=${{ matrix.arch }}" >> $GITHUB_ENV
-            echo "ARCH=${{ matrix.arch }}-${{ matrix.tag }}" >> $GITHUB_ENV
           fi
-          # 提取版本号给官方 Action 使用
+          
+          # 产物名字保留原有的架构-版本格式
+          echo "ARCH=${{ matrix.arch }}-${{ matrix.tag }}" >> $GITHUB_ENV
+          
+          # 提取版本号给官方编译 Action 使用 (openwrt-24.10 -> 24.10)
           echo "OPENWRT_VERSION=$(echo ${{ matrix.tag }} | sed 's/openwrt-//')" >> $GITHUB_ENV
 
       - name: Build Packages
@@ -93,7 +99,10 @@ jobs:
         if: ${{ env.SKIP_BUILD == '0' }}
         uses: ncipollo/release-action@v1
         with:
-          name: v${{ github.ref_name }}
+          # 关键修复点1：明确指定要发布到哪个 tag
+          tag: ${{ inputs.tag || github.ref_name }}
+          # 关键修复点2：防止名字变成 vv1.0.0
+          name: ${{ inputs.tag || github.ref_name }}
           token: ${{ secrets.GITHUB_TOKEN }}
           allowUpdates: true
           replacesArtifacts: true
